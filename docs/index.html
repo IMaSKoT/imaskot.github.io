@@ -1,3 +1,291 @@
-<html>
-    Hello, World!
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио | Максим Седов</title>
+    <!-- Подключаем шрифт Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Иконки (FontAwesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* Основные стили */
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-color: #e2e8f0;
+            --accent-color: #38bdf8;
+            --hover-color: #0ea5e9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.3s;
+        }
+
+        /* Навигация */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+            background-color: rgba(15, 23, 42, 0.9);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-color);
+        }
+
+        .nav-links a {
+            margin-left: 20px;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero секция (Главная) */
+        .hero {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero span {
+            color: var(--accent-color);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 30px;
+            color: #94a3b8;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            background-color: var(--accent-color);
+            color: #0f172a;
+            border-radius: 5px;
+            font-weight: 600;
+        }
+
+        .btn:hover {
+            background-color: var(--hover-color);
+        }
+
+        /* Секции */
+        section {
+            padding: 80px 10%;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        /* Навыки */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .skill-tag {
+            background-color: var(--card-bg);
+            padding: 10px 20px;
+            border-radius: 50px;
+            border: 1px solid #334155;
+        }
+
+        /* Проекты */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #334155;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-content h3 {
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+
+        .card-content p {
+            font-size: 0.9rem;
+            color: #94a3b8;
+            margin-bottom: 20px;
+        }
+
+        .card-links a {
+            margin-right: 15px;
+            font-size: 0.9rem;
+        }
+
+        .card-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Футер */
+        footer {
+            text-align: center;
+            padding: 40px;
+            background-color: var(--card-bg);
+            margin-top: 50px;
+        }
+
+        .social-links {
+            margin-bottom: 20px;
+        }
+
+        .social-links a {
+            font-size: 1.5rem;
+            margin: 0 10px;
+        }
+
+        /* Адаптивность для мобильных */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            nav { flex-direction: column; gap: 15px; }
+            .nav-links a { margin: 0 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Навигация -->
+    <nav>
+        <div class="logo">Portfolio.</div>
+        <div class="nav-links">
+            <a href="#about">Обо мне</a>
+            <a href="#skills">Навыки</a>
+            <a href="#projects">Проекты</a>
+            <a href="#contact">Контакты</a>
+        </div>
+    </nav>
+
+    <!-- Главный экран -->
+    <section class="hero" id="about">
+        <h1>Привет, я <span>Иван</span></h1>
+        <p>Я начинающий Frontend-разработчик. Создаю современные и удобные веб-сайты. Люблю учиться новому и писать чистый код.</p>
+        <a href="#projects" class="btn">Смотреть проекты</a>
+    </section>
+
+    <!-- Секция Навыки -->
+    <section id="skills">
+        <h2>Мои навыки</h2>
+        <div class="skills-container">
+            <span class="skill-tag">HTML5</span>
+            <span class="skill-tag">CSS3</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">Git / GitHub</span>
+            <span class="skill-tag">React (Learning)</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Figma</span>
+        </div>
+    </section>
+
+    <!-- Секция Проекты -->
+    <section id="projects">
+        <h2>Мои проекты</h2>
+        <div class="projects-grid">
+
+            <!-- Проект 1 -->
+            <div class="project-card">
+                <div class="card-content">
+                    <h3>Сайт-визитка</h3>
+                    <p>Простой и адаптивный сайт для малого бизнеса, написанный на чистом HTML и CSS.</p>
+                    <div class="card-links">
+                        <a href="#"><i class="fab fa-github"></i> Код</a>
+                        <a href="#"><i class="fas fa-external-link-alt"></i> Демо</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Проект 2 -->
+            <div class="project-card">
+                <div class="card-content">
+                    <h3>To-Do List</h3>
+                    <p>Приложение для списка задач с использованием JavaScript. Задачи сохраняются в LocalStorage.</p>
+                    <div class="card-links">
+                        <a href="#"><i class="fab fa-github"></i> Код</a>
+                        <a href="#"><i class="fas fa-external-link-alt"></i> Демо</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Проект 3 -->
+            <div class="project-card">
+                <div class="card-content">
+                    <h3>Калькулятор</h3>
+                    <p>Классический калькулятор с темной темой и историей вычислений.</p>
+                    <div class="card-links">
+                        <a href="#"><i class="fab fa-github"></i> Код</a>
+                        <a href="#"><i class="fas fa-external-link-alt"></i> Демо</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Футер / Контакты -->
+    <footer id="contact">
+        <div class="social-links">
+            <a href="https://github.com/ВАШ_НИК" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://t.me/ВАШ_НИК" target="_blank"><i class="fab fa-telegram"></i></a>
+            <a href="mailto:email@example.com"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p>&copy; 2026 Максим Седов. Сделано с ❤️</p>
+    </footer>
+
+</body>
 </html>
