@@ -36,8 +36,8 @@ nav:
   - Обо мне: index.md
   - Лабораторные работы:
       - Введение: projects.md
-      - Лабораторная 1: labs/lab1.md
-      - Лабораторная 2: labs/lab2.md
+      - Лабораторная 1: lab1.md
+      - Лабораторная 2: lab2.md
   - Контакты: contact.md
 
 plugins:
