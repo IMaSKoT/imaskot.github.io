@@ -9,18 +9,23 @@ workflows:
     tasks:
       - name: build-and-publish-site
         cubes:
-          - name: build-mkdocs-site
-            image: docker.io/library/python:3.13-slim
+          - name: build-and-deploy-mkdocs
+            image: docker.io/library/python:3.13
             script:
               - python -m pip install --upgrade pip
               - "if [ -f requirements.txt ]; then pip install -r requirements.txt; fi"
-              - cd ./source && mkdocs build -d ./docs
-              - echo "Сайт собран в папке ./docs"
-              - ls -la ./docs
 
-          - name: publish-to-release-branch
-            script:
-              - git checkout -b release
-              - git add ./docs
-              - "git commit -m \"feat: автоматическое обновление сайта\""
+              - cd source
+              - mkdocs build -d ../docs
+              - cd ..
+              - echo "Сайт собран в корневой папке docs"
+
+              - git config --global user.name "Yandex SourceCraft CI"
+              - git config --global user.email "ci@yandex.ru"
+
+              - git checkout -B release
+
+              - git add docs -f
+              - "git commit -m \"feat: автоматическая сборка сайта\" || echo \"Нет изменений для коммита\""
+
               - "git push origin release -f"
