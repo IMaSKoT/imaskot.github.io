@@ -6,7 +6,8 @@ on:
       - main  # или другая основная ветка
   workflow_dispatch:  # ручная активация через интерфейс GitHub
 
-
+permissions:
+  contents: write
 
 jobs:
   build:
